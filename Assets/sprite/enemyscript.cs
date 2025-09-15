@@ -31,8 +31,5 @@ public class enemyscript : MonoBehaviour
         // Start is called before the first frame update
     }
 
-    public Update()
-    }
-    Instantiate(enemySpawner, transform.position, Quaternion.identity);
-    {
+   
 }
