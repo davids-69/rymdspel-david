@@ -1,10 +1,12 @@
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class playerscript : MonoBehaviour
 {
     public float playerspeed = 11;
     public GameObject projectile;
+    public int health = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,6 +66,11 @@ public class playerscript : MonoBehaviour
             //tilldela spelarens en ny postion som är X = 9.67f
             transform.position = new Vector3(10.9f, transform.position.y, 0);
         }
+    }
+
+    public void TakeDamage ()
+    {
+        health = health - 50;
     }
 
 }
