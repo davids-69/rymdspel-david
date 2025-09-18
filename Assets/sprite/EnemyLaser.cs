@@ -4,12 +4,12 @@ public class enemyLaser : MonoBehaviour
 {
     private Vector3 moveDirection;
     public GameObject Laser; // Reference to the spawn point
-    public float Speed;
+    public float Speed = 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        
     }
     // Update is called once per frame
     void Update()
@@ -28,9 +28,6 @@ public class enemyLaser : MonoBehaviour
         {
             col.transform.GetComponent<playerscript>().TakeDamage();
         }
-
-            
-
         if (Laser.tag == "playerscript") ;
 
         Destroy(gameObject);

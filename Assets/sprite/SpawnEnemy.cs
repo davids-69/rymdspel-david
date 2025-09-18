@@ -1,30 +1,29 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class enemyscript : MonoBehaviour
+public class SpawnEnemy : MonoBehaviour
 {
     private Vector3 moveDirection;
     private float enemy = 1.0f; // Added this line to define the 'enemy' variable
-    public GameObject enemyspawner; // Reference to the spawn point
+    public GameObject EnemySpawn; // Reference to the spawn point
     public float Speed = 1f;
-    public GameObject laser;
+    //public GameObject laser;
     public int health = 50;
+    public float spawncooldown;
+    public bool canspawn = true;
 
-    // Start is called before the first frame update
+    [Header("randomise spawm loction")]
+    public float minValue;
+    public float maxValue;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //move to postion
-        //transform.position = new Vector3(0, -4, 0);
-        /*moveDirection = new Vector3(
-            Random.Range(-1f, 1f),
-            Random.Range(-1f, 1f),
-            0f
-        ).normalized;*/
+        //StartCoroutine(SpawnEnemy());
+        canspawn = false;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -39,10 +38,12 @@ public class enemyscript : MonoBehaviour
         if (transform.position.y <= -5.5f)
         {
             transform.position = new Vector3(Random.Range(-7, 7), 5.5f, 0);
-            Instantiate(laser, transform.position, Quaternion.identity);
+            Instantiate(gameObject, transform.position, Quaternion.identity);
         }
-
     }
+    //if(GameObject != null && canSpawm == true && Spawncooldown <0);
+    //Start
+
     private void OnTriggerEnter2D(Collider2D playerbullet)
     {
         Destroy(gameObject);
@@ -50,9 +51,6 @@ public class enemyscript : MonoBehaviour
     public void TakeDamage()
     {
         health = health - 50;
-
     }
-
+    
 }
-
-

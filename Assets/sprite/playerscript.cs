@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
@@ -7,6 +8,7 @@ public class playerscript : MonoBehaviour
     public float playerspeed = 11;
     public GameObject projectile;
     public int health = 100;
+    //public List<Image healht> health image;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -67,7 +69,11 @@ public class playerscript : MonoBehaviour
             transform.position = new Vector3(10.9f, transform.position.y, 0);
         }
     }
+    private void OnTriggerEnter2D(Collider2D Enemylaser)
+    {
+        Destroy(gameObject);
 
+    }
     public void TakeDamage ()
     {
         health = health - 50;
