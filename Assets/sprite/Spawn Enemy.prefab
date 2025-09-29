@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1530168433856590626}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9ff4e7f6eb4a348b5bb332566f1891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyspawner: {fileID: 1530168433856590626}
-  Speed: 1
-  laser: {fileID: 0}
-  health: 50
+  enemy: {fileID: 271738070257687936, guid: de8e2f542e9bfd94793c73c68261bd96, type: 3}

@@ -47,7 +47,7 @@ public class enemyscript : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
         health = health - 50;
 

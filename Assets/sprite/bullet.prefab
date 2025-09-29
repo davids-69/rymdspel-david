@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7327387652680557528}
   - component: {fileID: 6814348772171800251}
   - component: {fileID: 4161436242140745508}
-  - component: {fileID: 7352996573335480399}
+  - component: {fileID: 4861596725839199645}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Untagged
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.13, y: 0.37}
   m_EdgeRadius: 0
---- !u!114 &7352996573335480399
+--- !u!114 &4861596725839199645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6966484415744103162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e410b38348a2efc458c0618faf5ca714, type: 3}
+  m_Script: {fileID: 11500000, guid: 87e2c78c420095c4c88f69f6e2a3bf80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: 5
+  bullet: {fileID: 6966484415744103162}
+  Speed: 2
+  bulletdamage: 50
