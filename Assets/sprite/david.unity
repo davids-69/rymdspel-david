@@ -694,6 +694,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7277015664105785390, guid: 4ce782639a9cd85418b0e1e0848e7743, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 654647938}
+    - target: {fileID: 7277015664105785390, guid: 4ce782639a9cd85418b0e1e0848e7743, type: 3}
       propertyPath: EnemySpawn
       value: 
       objectReference: {fileID: 271738070257687936, guid: f945d14add3a21e428ce2ba9b9181d00, type: 3}
