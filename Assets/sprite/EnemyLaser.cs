@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class enemyLaser : MonoBehaviour
+public class EnemyLaser : MonoBehaviour
 {
     private Vector3 moveDirection;
     public GameObject Laser; // Reference to the spawn point
@@ -17,20 +17,20 @@ public class enemyLaser : MonoBehaviour
         transform.Translate(Vector3.down * Speed * Time.deltaTime);
         if (transform.position.y <= -5.5f)
         {
-            transform.position = new Vector3(Random.Range(-7, 7), 5.5f, 0);
+            Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.name == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
             col.transform.GetComponent<playerscript>().TakeDamage();
+            Destroy(gameObject);
         }
-        if (Laser.tag == "playerscript") ;
 
-        Destroy(gameObject);
+        
     }
 
 }

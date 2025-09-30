@@ -176,6 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyspawner: {fileID: 271738070257687936}
-  Speed: 1
+  Speed: 2
   laser: {fileID: 6211742790628582917, guid: cb65179ea9646b0498ee113a4c784eb2, type: 3}
   health: 50

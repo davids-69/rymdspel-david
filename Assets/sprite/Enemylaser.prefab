@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8503378029972171931}
   m_Layer: 0
   m_Name: Enemylaser
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Laser: {fileID: 6211742790628582917}
-  Speed: 1
+  Speed: 5
 --- !u!61 &8503378029972171931
 BoxCollider2D:
   m_ObjectHideFlags: 0

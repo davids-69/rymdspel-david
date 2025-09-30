@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,25 +7,18 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class enemyscript : MonoBehaviour
 {
     private Vector3 moveDirection;
-    private float enemy = 1.0f; // Added this line to define the 'enemy' variable
+    public float enemy = 1.0f; // Added this line to define the 'enemy' variable
     public GameObject enemyspawner; // Reference to the spawn point
     public float Speed = 1f;
     public GameObject laser;
     public int health = 50;
+    public float enemylasercooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        //move to postion
-        //transform.position = new Vector3(0, -4, 0);
-        /*moveDirection = new Vector3(
-            Random.Range(-1f, 1f),
-            Random.Range(-1f, 1f),
-            0f
-        ).normalized;*/
+        StartCoroutine(EnemyShootingMechanic());
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -43,16 +37,32 @@ public class enemyscript : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter2D(Collider2D playerbullet)
-    {
-        Destroy(gameObject);
-    }
+
     public void TakeDamage(float damage)
     {
         health = health - 50;
 
+        //OM health blir 0 eller mindre så ska jag dö
+
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
+        IEnumerator EnemyShootingMechanic() //loop for enemy shooting
+        {
+            while (enemylasercooldown > 0)
+            {
+                Instantiate(laser, transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(enemylasercooldown);
+            }
+            yield return null;
+
+        }
     }
 
-}
+
 
 

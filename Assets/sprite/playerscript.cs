@@ -8,6 +8,11 @@ public class playerscript : MonoBehaviour
     public float playerspeed = 11;
     public GameObject projectile;
     public int health = 100;
+    public int lives = 3;
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
+
     //public List<Image healht> health image;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,19 +25,19 @@ public class playerscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.right * playerspeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * playerspeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(Vector3.up * playerspeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(Vector3.down * playerspeed * Time.deltaTime);
         }
@@ -69,14 +74,28 @@ public class playerscript : MonoBehaviour
             transform.position = new Vector3(10.9f, transform.position.y, 0);
         }
     }
-    private void OnTriggerEnter2D(Collider2D Enemylaser)
-    {
-        Destroy(gameObject);
-
-    }
+    
     public void TakeDamage ()
     {
         health = health - 50;
+        if (health <= 0)
+        {
+            lives--;
+            health = 100;
+        }
+        if (lives == 2)
+        {
+            life1.gameObject.SetActive(false);
+        }
+        if (lives == 1)
+        {
+            life2.gameObject.SetActive(false);
+        }
+        if (lives == 0)
+        {
+            life3.gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
     }
 
 }
