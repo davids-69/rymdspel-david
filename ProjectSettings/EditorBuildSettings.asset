@@ -5,7 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/david sprite/main menu/Main Menu.unity
+    guid: 9ef30f787739d68438c1a870e35ea411
+  - enabled: 1
+    path: Assets/david sprite/david 1.unity
+    guid: 9666b01e680b915429daae6f0a895c65
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

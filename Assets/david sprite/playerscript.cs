@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
@@ -12,6 +13,7 @@ public class playerscript : MonoBehaviour
     public GameObject life1;
     public GameObject life2;
     public GameObject life3;
+    public GameObject GameOver;
 
     //public List<Image healht> health image;
 
@@ -77,7 +79,7 @@ public class playerscript : MonoBehaviour
     
     public void TakeDamage ()
     {
-        health = health - 50;
+        health = health - 100;
         if (health <= 0)
         {
             lives--;
@@ -94,10 +96,11 @@ public class playerscript : MonoBehaviour
         if (lives == 0)
         {
             life3.gameObject.SetActive(false);
+            GameOver.SetActive(true);
             Destroy(gameObject);
         }
+   
     }
-
 }
 
 
